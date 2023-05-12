@@ -8,19 +8,6 @@ services:
     ports:
       - "8085:8085"
 
-  db:
-    image: postgres:latest
-    container_name: pgsql_db
-    restart: always
-    environment:
-      - POSTGRES_DB=mydb
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=pass
-    ports:
-      - 5555:5432
-    volumes:
-      - ./psql-data:/var/lib/postgresql/data
-
   web:
     image: nginx:latest
     container_name: web_nginx2
